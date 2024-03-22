@@ -27,7 +27,7 @@ if ($stmt->rowCount() > 0) {
                 <input type="password" name="wachtwoord" placeholder="wachtwoord">
             </div>
             <button name="submit" class="btn btn-success">Inloggen</button>
-            <a href="reg.php">Geen account nog?</a>
+            <a href="reg.php">nog geen account?</a>
         </form>
     </div>
 </main>

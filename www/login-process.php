@@ -24,10 +24,16 @@ if (isset($_POST['submit'])) {
                     $_SESSION['voornaam']  = $dbuser['voornaam'];
                     $_SESSION['achternaam']   = $dbuser['achternaam'];
                     $_SESSION['rol']       = $dbuser['rol'];
-
                     // echo "You are logged in";
-                    header("Location: home.php");
+                    if ($_SESSION['rol'] == 'admin' || $_SESSION['rol'] == 'manager') {
+                        header("Location: dashboard.php");
                     exit;
+                    }
+                    else {
+                        header("Location: home.php");
+                    exit;
+                    }
+                    
                 } else {
                     include 'header.php';
                     $_GET['message'] = 'wrongpassword';

@@ -1,30 +1,28 @@
 <?php 
 session_start();
 require "database.php";
+
+
+if ($_SESSION['rol'] != 'admin' && $_SESSION['rol'] != 'manager') {
+    header('Location: login.php');
+    exit();
+}
 include "header.php";
 
-if (!isset($_SESSION['user_id'])) {
-    echo "You are not logged in, please login. ";
-    echo "<a href='login.php'>Login here</a>";
-    exit;
-}
+$sql = "SELECT * FROM Gebruiker";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
 
-
-if ($_SESSION['role'] != 'admin') {
-    echo "You are not allowed to view this page, please login as admin";
-    exit;
-}
-
+include "footer.php";
 ?>
-
-
-
-
-
-
-
-
-
-
-
-<?php include "footer.php" ?>
+<div class="links">
+    Links:
+    <a href="gebruikers.php">Gebruikers</a>
+    <a href="reserveringen.php">Reserveringen</a>
+</div>
+<div class="dashboard">
+<ul>
+    <li> aantal Gebruikers: <?php echo $stmt->rowCount(); ?> </li>
+    <li> aantal reserveringen: <?php  ?></li>
+</ul>
+</div>

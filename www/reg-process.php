@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $huisnummer = $_POST['huisnummer'];
     $postcode = $_POST['postcode'];
     $plaats = $_POST['plaats'];
-
+    try {
     // Insert address into Adres table
     $sqladres = "INSERT INTO Adres (straat, huisnummer, postcode, plaats) VALUES (:straat, :huisnummer, :postcode, :plaats)";
     $stmt = $conn->prepare($sqladres);
@@ -40,4 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         echo "Error";
     }
+}catch (PDOException $e) {
+    if ($e->getCode() == 23000) {
+        echo "The email already exists.";
+    } else {
+        throw $e;
+    }
+}
 }
