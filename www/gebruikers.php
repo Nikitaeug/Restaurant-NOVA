@@ -62,13 +62,3 @@ if ($stmt->rowCount() > 0) {
         </tr>
     <?php endforeach; ?>
 </table>
-
-
-
-
-
-
-
-
-
-<?php include "footer.php"; ?>

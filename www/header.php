@@ -19,11 +19,17 @@
         </a>
         <nav>
             <a href="home.php" class="<?= ($_SERVER['PHP_SELF'] == '/home.php' ? 'active' : '') ?>">Home</a>
-            <a href="gerechten.php" class="<?= ($_SERVER['PHP_SELF'] == '/gerechten.php' ? 'active' : '') ?>">Gerechten</a>
+            <div class="dropdown">
+                <button class="dropbtn <?= ($_SERVER['PHP_SELF'] == '/gerechten.php' ? 'active' : '') ?>">Gerechten</button>
+                <div class="dropdown-content">
+                    <a href="admingerechten.php" class="<?= ($_SERVER['PHP_SELF'] == '/gerechten.php' ? 'active' : '') ?>">Adminpage</a>
+                    <a href="gerechten.php" class="<?= ($_SERVER['PHP_SELF'] == '/gerechten.php' ? 'active' : '') ?>">Klantpage</a>
+                </div>
+            </div>
                 <?php if (isset($_SESSION['id'])) : ?>
                     <?php if ($_SESSION['rol'] == 'klant') : ?>
                 <a href="reserveren.php" class="<?= ($_SERVER['PHP_SELF'] == '/reserveren.php' ? 'active' : '') ?>">Reserveren</a>
-                <a href="gebruiker.php" class="<?= ($_SERVER['PHP_SELF'] == '/reserveren.php' ? 'active' : '') ?>"><?php echo $_SESSION['voornaam'] ?></a>
+                <a href="gebruiker.php" class="<?= ($_SERVER['PHP_SELF'] == '/gebruiker.php' ? 'active' : '') ?>"><?php echo $_SESSION['voornaam'] ?></a>
                 <?php endif; ?>
                     <?php if ($_SESSION['rol'] == 'admin' || $_SESSION['rol'] == 'manager') : ?>
                     <a href="reserveren.php" class="<?= ($_SERVER['PHP_SELF'] == '/reserveren.php' ? 'active' : '') ?>">Reserveren</a>

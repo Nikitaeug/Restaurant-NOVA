@@ -34,8 +34,3 @@ include "header.php";
             </form>
         </div>
 </main>
-
-
-
-
-<?php include "footer.php" ?>

@@ -11,17 +11,16 @@ if (isset($_SESSION['id'])) {
 $aantal_personen = $_POST['aantal_personen'];
 $datum = $_POST['datum'];
 $tijd = $_POST['tijd'];
-$email = $_POST['email'];
 
-$sql = "INSERT INTO Reservering (aantal_personen, datum, tijd, email) VALUES (:aantal_personen, :datum, :tijd, :email)";
+$sql = "INSERT INTO Reservering (aantal_personen, datum, tijd, gebruiker_id) VALUES (:aantal_personen, :datum, :tijd, :id)";
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':aantal_personen', $aantal_personen);
 $stmt->bindParam(':datum', $datum);
 $stmt->bindParam(':tijd', $tijd);
-$stmt->bindParam(':email', $email);
+$stmt->bindParam(':id', $id);
 $stmt->execute();
 
-if ($stmt->execute()) {
+if ($stmt->rowCount() > 0) {
     header('location: reserveren.php');
     exit(); 
 } else {

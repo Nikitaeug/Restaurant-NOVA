@@ -22,15 +22,10 @@ include "header.php";
                 </div>
                 
                 <div class="form-group">
-                    <label  for="datum">Email</label>
+                    <label  for="email">Email</label>
                     <input type="email" name="email" placeholder="email" required>
                 </div>
                 <button name="submit" class="btn btn-success">Registreren</button>
             </form>
         </div>
 </main>
-
-
-
-
-<?php include "footer.php" ?>

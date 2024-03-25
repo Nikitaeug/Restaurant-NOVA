@@ -35,5 +35,5 @@ if(isset($_SESSION['rol'])){
     echo "</div>";
 }
 echo "</div>";
-
 ?>
+<a href="gerecht-toevoegen.php" class="button-gerecht-toevoegen">gerecht toevoegen</a>

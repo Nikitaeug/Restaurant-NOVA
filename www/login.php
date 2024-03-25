@@ -32,10 +32,3 @@ if ($stmt->rowCount() > 0) {
     </div>
 </main>
 
-
-
-
-
-
-
-<?php include "footer.php" ?>

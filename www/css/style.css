@@ -77,57 +77,6 @@ header nav a:hover{
 header nav:hover > a:not(:hover) { 
     background-color: rgba(62, 161, 37, 0.5);
 }   
-/* .dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 260px;
-    z-index: 1;
-    padding-top: 10px;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    background-color: greenyellow;
-    box-shadow: 1px 1px 1px 1px green;
-}
-
-.dropdown:hover > a{
-    color: greenyellow;
-} */
-
-/* main .home1{
-    background-color: #F8F4E5ff;
-    padding: 20px;
-    box-shadow: 1px 1px 1px 1px greenyellow;
-    margin: 10px;
-    justify-items: start;
-    grid-column: 1 / 2;
-}
-main .home2 {
-    grid-column: 1 / -1; 
-}
-main, main .homepage {
-    width: 100%;
-}
-main .homepage {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    grid-gap: 20px;
-} */
-
 main .homepage{
     width: 100%;
     text-align: center;
@@ -141,20 +90,44 @@ main .home1{
     display: flex;
     position: absolute;
     align-items: center;
-    background-color: #F8F4E5ff;
+    background-color: var(--clr-second);
     padding: 20px;
     top: 500px;
 }
 main .home2{
-position: absolute;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap:0px;
     top: 900px;
+    margin: 50px;
+    padding: 50px;
+    font-weight: bold;
+    background-color: var(--clr-third);
+    border-radius: 20px;
+}
+#h1t  {  
+    font-size: 50px !important;
+    font-weight: bold !important;;
+}
+main .home2 img{
+    position: absolute;
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
+    right: 200px;
+    top: 60px;
 }
 
 main{
     margin-top: 10px;
     padding:20px;
+}
+#h1t{
+    font-size: 25px;
+    font-weight: 600;
 }
 .tijden{
     display: flex;
@@ -225,25 +198,6 @@ main .container{
     padding: 5px;
     box-shadow: 1px 1px 1px 1px greenyellow;
 } 
-/* 
-.btn{
-    background-color: greenyellow;
-    border: 1px solid greenyellow;
-    padding: 5px;
-    box-shadow: 1px 1px 1px 1px greenyellow;
-    color: white;
-    text-decoration: none;
-}
-
-.btn-success{
-    background-color: green;
-    border: 1px solid green;
-    padding: 5px;
-    box-shadow: 1px 1px 1px 1px green;
-    color: white;
-    text-decoration: none;
-} */
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -500,4 +454,80 @@ h1 .titelger{
 .profile-info a {
 text-decoration: none;
 color: var(--clr-seventh);
+}
+.button-gerecht-toevoegen {
+    position: absolute;
+    top: 15%;
+    right: 100px;
+    background-color: #A6BEA1ff;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.button-gerecht-toevoegen:hover {
+    background-color: #8BAB8Aff;
+}
+
+.dropbtn {
+    background-color: rgba(62, 161, 37, 0.5);
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 60px;
+    transition: 0.3s;
+    display: inline-block;
+    height: 50px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    background: transparent;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background: transparent;
+    border-radius: 60px;
+}
+.dropdown:hover .dropbtn { 
+    background-color: greenyellow;
+    color: white;
+}
+header nav a, .dropbtn {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 60px;
+    transition: 0.3s;
+    background-color: rgba(62, 161, 37, 0.5);
+    color: white;
+}
+
+header nav a:hover, .dropdown:hover .dropbtn {
+    background-color: greenyellow;
+    color: white;
+}
+header nav a:not(:hover), .dropbtn:not(:hover) {
+    background-color: rgba(62, 161, 37, 0.5);
+    color: white;
 }

@@ -25,7 +25,7 @@ $stmt->bindParam(':email', $email);
 $stmt->bindParam(':voornaam', $voornaam);
 $stmt->bindParam(':achternaam', $achternaam);
 $stmt->bindParam(':rol', $rol);
-$stmt->bindParam(':id', $id); // Add this line
+$stmt->bindParam(':id', $id);
 $stmt->execute();
 
 $sqladres = "UPDATE Adres SET straat = :straat, huisnummer = :huisnummer, postcode = :postcode, plaats = :plaats WHERE adres_id = :id";
@@ -34,7 +34,7 @@ $stmt->bindParam(':straat', $straat);
 $stmt->bindParam(':huisnummer', $huisnummer);
 $stmt->bindParam(':postcode', $postcode);
 $stmt->bindParam(':plaats', $plaats);
-$stmt->bindParam(':id', $id); // Add this line
+$stmt->bindParam(':id', $id);
 $stmt->execute();
 
 if ($stmt->execute()) {

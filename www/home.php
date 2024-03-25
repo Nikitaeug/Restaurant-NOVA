@@ -41,21 +41,18 @@ include "header.php";
         </div>
     </div>
     <div class="home2">
-        <h1>Openingstijden</h1>
-        <div>
-            <div>Maandag: 08:00 - 18:00</div>
-            <div>Dinsdag: 08:00 - 18:00</div>
-            <div>Woensdag: 08:00 - 18:00</div>
-            <div>Donderdag: 08:00 - 18:00</div>
-            <div>Vrijdag: 08:00 - 18:00</div>
-            <div>Zaterdag: 08:00 - 18:00</div>
-            <div>Zondag: Gesloten</div>
+        <div class="text-image">
+        <h1 id="h1t">Nieuw hier?</h1>
+            <div>Bestel online, thuisbezorgd in 20-60 min of afhalen mogelijk.</div>
+            <div> Gebruik 'masala15' voor 15% korting. Betaal online of contant/pin bij afhalen.</div>
+            <div>Bestel nu!</div>
         </div>
+        <img src="images/soepindia.jpg" alt="soep">
     </div>
 </main>
 
 
-<?php include "footer.php" ?>
+
 <script src="script.js"></script>
 <style>
     .palette {

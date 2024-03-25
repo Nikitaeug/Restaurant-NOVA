@@ -13,11 +13,10 @@ $sql = "SELECT * FROM Gebruiker";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 
-include "footer.php";
 ?>
+<main>
+    <h1>Dashboard</h1>
 <div class="links">
-    Links:
-    <a href="gebruikers.php">Gebruikers</a>
     <a href="reserveringen.php">Reserveringen</a>
 </div>
 <div class="dashboard">
@@ -26,3 +25,4 @@ include "footer.php";
     <li> aantal reserveringen: <?php  ?></li>
 </ul>
 </div>
+</main>
