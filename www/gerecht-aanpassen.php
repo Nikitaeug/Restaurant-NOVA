@@ -45,7 +45,7 @@ if ($stmt->rowCount() > 0) {
                 <input type="text" name="ingredienten" value="<?php echo $user['ingredienten'] ?>">
         </div>
         <div class="form-group">
-                <label for="duur">Bereidingstijd</label>
+                <label for="duur">bereidings tijd(min)</label>
                 <input type="text" name="duur" value="<?php echo $user['duur'] ?>">
         </div>
         <div class="form-group">

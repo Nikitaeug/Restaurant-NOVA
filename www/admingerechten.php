@@ -16,6 +16,7 @@ $sqlzoek = "SELECT Product.*, Categorie.categorie AS categorie_naam, Menugang.me
             WHERE Product.naam LIKE :zoek 
             OR Product.beschrijving LIKE :zoek 
             OR Product.ingredienten LIKE :zoek 
+            OR Product.duur LIKE :zoek
             OR Product.aantal_voorraad LIKE :zoek 
             OR Product.vega LIKE :zoek 
             OR Product.verkoopprijs LIKE :zoek 
@@ -26,6 +27,7 @@ $stmt = $conn->prepare($sqlzoek);
 $stmt->execute([':zoek' => '%' . $zoek . '%']); // Execute the statement with the search term
 
 echo "<h2><a href=\"gerecht-toevoegen.php\">Gerecht toevoegen</a></h2>";
+echo "<h2><a href=\"categorie-toevoegen.php\">Categorie toevoegen</a></h2>";
 
 // Search form
 echo "<form method=\"get\"action=\"admingerechten.php\">";
@@ -77,9 +79,3 @@ echo "</table>";
 
 ?>
 
-<style>
-    h2 a {
-        text-decoration: none;
-        color: black;
-    }
-</style>

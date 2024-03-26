@@ -1,12 +1,12 @@
 <?php
 session_start();
 require 'database.php';
-include 'header.php';
 
 if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'admin' && $_SESSION['rol'] != 'manager') {
     header('Location: gerechten.php');
     exit();
 }
+include 'header.php';
 ?>
 <main>
     <div class="container">
@@ -24,7 +24,7 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'admin' && $_SESSION['rol'] 
     <input type="text" name="ingredienten" id="ingredienten" required>
     </div>
     <div class="form-group">
-    <label for="duur">bereidings tijd</label>
+    <label for="duur">bereidings tijd(min)</label>
     <input type="text" name="duur" id="duur" required>
     </div>
     <div class="form-group">

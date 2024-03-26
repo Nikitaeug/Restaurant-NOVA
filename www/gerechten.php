@@ -36,4 +36,9 @@ if(isset($_SESSION['rol'])){
 }
 echo "</div>";
 ?>
-<a href="gerecht-toevoegen.php" class="button-gerecht-toevoegen">gerecht toevoegen</a>
+<?php 
+if(isset($_SESSION['rol'])){
+    if ($_SESSION['rol'] == 'admin' || $_SESSION['rol'] == 'manager'){
+        echo "<a href=\"gerecht-toevoegen.php\" class=\"button-gerecht-toevoegen\">gerecht toevoegen</a>";
+    }
+    }

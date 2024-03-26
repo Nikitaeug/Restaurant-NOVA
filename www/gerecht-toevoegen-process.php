@@ -20,17 +20,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $categorie = $_POST['categorie'];
     $menugang = $_POST['menugang'];
     $afbeelding = $_POST['afbeelding'];
-    // Insert into menugang table and get the ID
-    $sql = "INSERT INTO Menugang (naam) VALUES (:menugang)";
+    // Get the ID from the menugang table
+    $sql = "SELECT menugang_id FROM Menugang WHERE menugang_naam = :menugang";
     $stmt = $conn->prepare($sql);
     $stmt->execute([':menugang' => $menugang]);
-    $menugang_id = $conn->lastInsertId();
+    $menugang_id = $stmt->fetchColumn();
 
-    // Insert into categorie table and get the ID
-    $sql = "INSERT INTO Categorie (categorie) VALUES (:categorie)";
+    // Get the ID from the categorie table
+    $sql = "SELECT categorie_id FROM Categorie WHERE categorie = :categorie";
     $stmt = $conn->prepare($sql);
     $stmt->execute([':categorie' => $categorie]);
-    $categorie_id = $conn->lastInsertId();
+    $categorie_id = $stmt->fetchColumn();
 
     // Now use these IDs when inserting into the Product table
     $sql = "INSERT INTO Product (naam, beschrijving, ingredienten, duur, vega, verkoopprijs, inkoopprijs, aantal_voorraad, categorie_id, menugang_id, afbeelding) VALUES (:naam, :beschrijving, :ingredienten, :duur, :vega, :verkoopprijs, :inkoopprijs, :aantal_voorraad, :categorie_id, :menugang_id, :afbeelding)";
