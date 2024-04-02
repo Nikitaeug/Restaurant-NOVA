@@ -8,17 +8,13 @@ $stmt->execute();
 if ($stmt->rowCount() > 0) {
     $db = $stmt->fetch(PDO::FETCH_ASSOC);
 }
-
 ?>
-
+<div class="background-image">
 <main>
-
     <h1>Login</h1>
     <div class="container">
-
         <form action="login-process.php" method="post">
             <div class="form-group">
-
                 <label for="email">Email</label>
                 <input type="email" name="email" placeholder="email">
             </div>
@@ -31,4 +27,4 @@ if ($stmt->rowCount() > 0) {
         </form>
     </div>
 </main>
-
+</div>

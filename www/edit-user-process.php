@@ -13,7 +13,7 @@ $email = $_POST['email'];
 $wachtwoord = $_POST['wachtwoord'];
 $voornaam = $_POST['voornaam'];
 $achternaam = $_POST['achternaam'];
-$rol = $_POST['Rol'];
+$rol = isset($_POST['rol']) ? $_POST['rol'] : 'klant';
 $straat = $_POST['straat'];
 $huisnummer = $_POST['huisnummer'];
 $postcode = $_POST['postcode'];
@@ -37,9 +37,10 @@ $stmt->bindParam(':plaats', $plaats);
 $stmt->bindParam(':id', $id);
 $stmt->execute();
 
-if ($stmt->execute()) {
+if ($_SESSION['rol'] == 'admin' || $_SESSION['rol'] == 'manager') {
     header('location: gebruikers.php');
     exit(); 
 } else {
-    echo "Error updating user";
+    header('location: gebruiker.php');
+    exit();
 }

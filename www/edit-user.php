@@ -2,6 +2,8 @@
 session_start();
 require "database.php";
 
+
+
 include "header.php";
 $id = $_GET['id'];
 $_SESSION['id'] = $id;
@@ -43,7 +45,7 @@ if ($stmt->rowCount() > 0) {
         <?php if ($_SESSION['rol'] == 'admin') {
             echo '<div class="form-group
             <label for="Rol">Rol</label>
-            <select name="Rol" id="Rol">
+            <select name="rol" id="rol">
                 <option value="' . $user['rol'] . '" disabled>' . $user['rol'] . '</option>
                 <option value="admin">admin</option>
                 <option value="manager">manager</option>

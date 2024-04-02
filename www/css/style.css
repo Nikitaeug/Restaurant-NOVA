@@ -80,7 +80,7 @@ header nav a {
     color: white;
 }
 header nav a.active{
-    background-color: greenyellow;
+    background-color: greenyellow !important;
 }
 header nav a:hover{
     background-color: greenyellow;
@@ -88,6 +88,49 @@ header nav a:hover{
 header nav:hover > a:not(:hover) { 
     background-color: rgba(62, 161, 37, 0.5);
 }   
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+.dashboard2 {
+    color: var(--clr-sixth);
+}
+
+.dashboard-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    color: black;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1);
+}
+.dashboard-item:hover {
+    transform: scale(1.1);
+    background-color: var(--clr-fourth);
+}
+
+.dashboard-item h2 {
+    margin-bottom: 10px;
+}
+
+.dashboard-item a {
+    color: #007BFF;
+    text-decoration: none;
+}
 main .homepage{
     width: 100%;
     text-align: center;
@@ -184,7 +227,6 @@ main .container{
     align-items: center;
     text-align: center;
 }
-
 .container .product{
     display: flex;
     justify-content: center;
@@ -238,7 +280,7 @@ table tbody tr:nth-child(even) {
     flex-direction: column;
     width: 50%;
     margin: 10px;
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    box-sizing: border-box;
     border: 1px solid black;
     padding: 5px;
 }
@@ -247,14 +289,16 @@ table tbody tr:nth-child(even) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%; /* Adjust this value as needed */
+    width: 60%;
     margin: 20px auto;
     padding: 20px;
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    box-sizing: border-box;
     border: none;
     background: #f8f8f8;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    background-color: rgba(210, 236, 217, 0.3);
+    backdrop-filter: blur(8px);
 }
 
 form div {
@@ -325,8 +369,6 @@ main .container{
 
 main .container form{
     padding:20px;
-    box-shadow: 1px 1px 1px 1px greenyellow;
-    
 }
 
 main .container form div{
@@ -396,17 +438,34 @@ h1 .titelger{
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 5px;
     width: 1366px;
     height: 768px;
 }
+@media (max-width: 600px) {
+    .gerechten {
+        grid-template-columns: repeat(1, minmax(100%, 1fr));
+    }
+}
 
+@media (min-width: 601px) and (max-width: 900px) {
+    .gerechten {
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    }
+}
+
+@media (min-width: 901px) {
+    .gerechten {
+        grid-template-columns: repeat(3, minmax(33.33%, 1fr));
+        width: 100%;
+    }
+}
 .gerechtcon {
     position: relative;
     border: solid;
     justify-items: center;
     margin: 10px;
-    justify-content: space-between;
+    text-align: center;
 }
 
 .gerechtcon img {
@@ -432,13 +491,6 @@ h1 .titelger{
     opacity: 1;
 }
 
-/* .profiel {
-    width: 300px;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-} */
 
 .profile-section {
     background-image: url(/images/DALL·E\ 2024-03-19\ 12.56.16\ -\ Design\ a\ small\,\ stylish\ logo\ for\ a\ restaurant\ called\ _Indiase\ Restaurant_.\ The\ logo\ should\ feature\ iconic\ Indian\ elements\,\ such\ as\ a\ lotus\ flower\ or\ t.jpeg); /* Replace with your image path */
@@ -466,10 +518,10 @@ h1 .titelger{
 text-decoration: none;
 color: var(--clr-seventh);
 }
-.button-gerecht-toevoegen {
+.button-gerecht-toevoegen1 {
     position: absolute;
     top: 15%;
-    right: 100px;
+    right: 80px;
     background-color: #A6BEA1ff;
     border: none;
     color: black;
@@ -477,8 +529,29 @@ color: var(--clr-seventh);
     border-radius: 10px;
     font-weight: bold;
     text-decoration: none;
+    height: 25px;
+    width: 173px;
+    font-size: 16px;
 }
-.button-gerecht-toevoegen:hover {
+.button-gerecht-toevoegen2 {
+    position: absolute;
+    top: 15%;
+    right: 300px;
+    background-color: #A6BEA1ff;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    height: 25px;
+    width: 173px;
+    font-size: 16px;
+}
+.button-gerecht-toevoegen1:hover {
+    background-color: #8BAB8Aff;
+}
+.button-gerecht-toevoegen2:hover {
     background-color: #8BAB8Aff;
 }
 
@@ -546,4 +619,82 @@ header nav a:not(:hover), .dropbtn:not(:hover) {
 h2 a {
     text-decoration: none;
     color: black;
+}
+.background-image{
+    height: 89vh;
+    background-image: url("../images/tafels.jpg");
+    background-color: #f0f0f0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    backdrop-filter: blur(10px);
+}
+.background-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../images/tafels.jpg");
+    background-color: #f0f0f0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(3px);
+    z-index: -1;
+}
+.background-image2{
+    height: 90vh;
+    background-image: url("../images/rustigtafels.jpg");
+    background-color: #f0f0f0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    backdrop-filter: blur(10px);
+}
+.background-image2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../images/rustigtafels.jpg");
+    background-color: #f0f0f0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(3px);
+    z-index: -1;
+}
+.background-image3{
+    height: 90vh;
+    background-image: url("../images/dashboard.jpg");
+    background-color: #f0f0f0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    backdrop-filter: blur(10px);
+}
+.background-image3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../images/dashboard.jpg");
+    background-color: #f0f0f0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(3px);
+    z-index: -1;
 }

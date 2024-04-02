@@ -52,8 +52,6 @@ include "header.php";
 </main>
 
 
-
-<script src="script.js"></script>
 <style>
     .palette {
         display: grid;

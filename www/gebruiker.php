@@ -20,7 +20,6 @@ $gebruikers = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 echo "<p>Email: " . $gebruiker['email'] . "</p>";
                 echo "<p>Adres: " . $gebruiker['straat'] . " " . $gebruiker['huisnummer'] . ", " . $gebruiker['postcode'] . " " . $gebruiker['plaats'] . "</p>";
                 echo "<td><a href=\"edit-user.php?id=" . $gebruiker['gebruiker_id'] . "\">Aanpassen</a></td><br>";
-                echo "<td><a href=\"delete-user.php?id=" . $gebruiker['gebruiker_id'] . "\">Verwijder je profiel</a></td>";
-        ?>
+                echo "<td><a href=\"delete-user.php?id=" . $gebruiker['gebruiker_id'] . "\" onclick=\"return confirm('Weet je zeker dat je jezelf wilt verwijderen?')\">Verwijder je profiel</a></td>";        ?>
     </div>
 </div>

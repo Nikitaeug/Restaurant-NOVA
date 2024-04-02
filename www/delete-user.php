@@ -11,6 +11,8 @@ $stmt->execute();
 
 if ($stmt->execute() == true) {
     header("Location: home.php");
+    session_unset();
+    session_destroy();
     exit;
 } else {
     echo "Er is iets misgegaan";

@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
                     exit;
                     }
                     else {
-                        header("Location: home.php");
+                        header("Location: klantendashboard.php");
                     exit;
                     }
                     
@@ -38,14 +38,12 @@ if (isset($_POST['submit'])) {
                     include 'header.php';
                     $_GET['message'] = 'wrongpassword';
                     include 'login-message.php';
-                    include 'footer.php';
                     exit;
                 }
             } else {
                 include 'header.php';
                 $_GET['message'] = 'usernotfound';
                 include 'login-message.php';
-                include 'footer.php';
                 exit;
             }
         }

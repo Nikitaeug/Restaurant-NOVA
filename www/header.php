@@ -18,29 +18,33 @@
             <img src="Images/DALL·E 2024-03-19 12.56.16 - Design a small, stylish logo for a restaurant called _Indiase Restaurant_. The logo should feature iconic Indian elements, such as a lotus flower or t.jpeg" alt="Image">
         </a>
         <nav>
-            <a href="home.php" class="<?= ($_SERVER['PHP_SELF'] == '/home.php' ? 'active' : '') ?>">Home</a>
-            <a href="gerechten.php" class="<?= ($_SERVER['PHP_SELF'] == '/gerechten.php' ? 'active' : '') ?>">Gerechten</a>
-                <?php if (isset($_SESSION['id'])) : ?>
-                    <?php if ($_SESSION['rol'] == 'klant') : ?>
-                <a href="reserveren.php" class="<?= ($_SERVER['PHP_SELF'] == '/reserveren.php' ? 'active' : '') ?>">Reserveren</a>
-                <a href="gebruiker.php" class="<?= ($_SERVER['PHP_SELF'] == '/gebruiker.php' ? 'active' : '') ?>"><?php echo $_SESSION['voornaam'] ?></a>
-                <?php endif; ?>
-                    <?php if ($_SESSION['rol'] == 'admin' || $_SESSION['rol'] == 'manager') : ?>
-                        <div class="dropdown">
-                <button class="dropbtn <?= ($_SERVER['PHP_SELF'] == '/gerechten.php' ? 'active' : '') ?>">Gerechten</button>
-                <div class="dropdown-content">
-                    <a href="admingerechten.php" class="<?= ($_SERVER['PHP_SELF'] == '/gerechten.php' ? 'active' : '') ?>">Adminpage</a>
-                    <a href="gerechten.php" class="<?= ($_SERVER['PHP_SELF'] == '/gerechten.php' ? 'active' : '') ?>">Klantpage</a>
+        <a href="home.php" class="<?php if ($_SERVER['PHP_SELF'] == '/home.php') { echo 'active'; } ?>">Home</a>
+            <?php if (isset($_SESSION['id']) && ($_SESSION['rol'] == 'admin' || $_SESSION['rol'] == 'manager')) : ?>
+                <div class="dropdown">
+                    <button class="dropbtn <?= ($_SERVER['PHP_SELF'] == '/gerechten.php' ? 'active' : '') ?>">Gerechten</button>
+                    <div class="dropdown-content">
+                        <a href="admingerechten.php" class="<?= ($_SERVER['PHP_SELF'] == '/gerechten.php' ? 'active' : '') ?>">Adminpage</a>
+                        <a href="gerechten.php" class="<?= ($_SERVER['PHP_SELF'] == '/gerechten.php' ? 'active' : '') ?>">Klantpage</a>
+                    </div>
                 </div>
-            </div>
+            <?php else : ?>
+                <a href="gerechten.php" class="<?= ($_SERVER['PHP_SELF'] == '/gerechten.php' ? 'active' : '') ?>">Gerechten</a>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['id'])) : ?>
+                <?php if ($_SESSION['rol'] == 'klant') : ?>
+                    <a href="reserveren.php" class="<?= ($_SERVER['PHP_SELF'] == '/reserveren.php' ? 'active' : '') ?>">Reserveren</a>
+                    <a href="klantendashboard.php" class="<?= ($_SERVER['PHP_SELF'] == '/klantendashboard.php' ? 'active' : '') ?>">Dashboard</a>
+                    <a href="gebruiker.php" class="<?= ($_SERVER['PHP_SELF'] == '/gebruiker.php' ? 'active' : '') ?>"><?php echo $_SESSION['voornaam'] ?></a>
+                <?php endif; ?>
+                <?php if ($_SESSION['rol'] == 'admin' || $_SESSION['rol'] == 'manager') : ?>
                     <a href="reserveren.php" class="<?= ($_SERVER['PHP_SELF'] == '/reserveren.php' ? 'active' : '') ?>">Reserveren</a>
                     <a href="dashboard.php" class="<?= ($_SERVER['PHP_SELF'] == '/dashboard.php' ? 'active' : '') ?>">Dashboard</a>
-                        <a href="gebruikers.php" class="<?= ($_SERVER['PHP_SELF'] == '/gebruikers.php' ? 'active' : '') ?>">Gebruikers</a>
+                    <a href="gebruikers.php" class="<?= ($_SERVER['PHP_SELF'] == '/gebruikers.php' ? 'active' : '') ?>">Gebruikers</a>
                 <?php endif; ?>
                 <a href="logout.php">Uitloggen</a>
-                <?php else : ?>
-                    <a href="login.php" class="btn btn-success">Inloggen</a>
-                <?php endif; ?>
-            
+            <?php else : ?>
+                <a href="login.php" class="btn btn-success">Inloggen</a>
+            <?php endif; ?>
         </nav>
     </header>
+    

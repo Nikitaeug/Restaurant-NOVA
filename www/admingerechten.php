@@ -26,8 +26,8 @@ $sqlzoek = "SELECT Product.*, Categorie.categorie AS categorie_naam, Menugang.me
 $stmt = $conn->prepare($sqlzoek);
 $stmt->execute([':zoek' => '%' . $zoek . '%']); // Execute the statement with the search term
 
-echo "<h2><a href=\"gerecht-toevoegen.php\">Gerecht toevoegen</a></h2>";
-echo "<h2><a href=\"categorie-toevoegen.php\">Categorie toevoegen</a></h2>";
+echo "<h2><a class=\"button-gerecht-toevoegen1\" href=\"gerecht-toevoegen.php\">Gerecht toevoegen</a></h2>";
+echo "<h2><a class=\"button-gerecht-toevoegen2\" href=\"categorie-toevoegen.php\">Categorie toevoegen</a></h2>";
 
 // Search form
 echo "<form method=\"get\"action=\"admingerechten.php\">";
