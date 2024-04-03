@@ -2,7 +2,10 @@
 session_start();
 require "database.php";
 
-
+if ($_SESSION['rol'] != 'admin' && $_SESSION['rol'] != 'manager') {
+    header('Location: login.php');
+    exit();
+}
 
 include "header.php";
 $id = $_GET['id'];

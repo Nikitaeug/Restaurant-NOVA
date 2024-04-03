@@ -21,7 +21,7 @@ $stmt->bindParam(':id', $id);
 $stmt->execute();
 
 if ($stmt->rowCount() > 0) {
-    header('location: reserveren.php');
+    header('location: klantreservering.php');
     exit(); 
 } else {
     echo "Error updating user";
