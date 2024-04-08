@@ -8,6 +8,7 @@ if (isset($_SESSION['id'])) {
     // Handle the case where "id" is not set in the session
     exit('Invalid request.');
 }
+
 $aantal_personen = $_POST['aantal_personen'];
 $datum = $_POST['datum'];
 $tijd = $_POST['tijd'];
